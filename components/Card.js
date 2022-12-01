@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import { CiCircleRemove } from "react-icons/ci";
+import { HiTrash } from "react-icons/hi";
 
 export default function Card({ name, thoughts, id, onRemoveCard }) {
   return (
     <StyledCard>
       <h4>{name} is thinking about...</h4>
       <p>{thoughts}</p>
-      <button onClick={() => onRemoveCard(id)}>
-        <CiCircleRemove />
-      </button>
+      <StyledRemoveButton onClick={() => onRemoveCard(id)}>
+        <HiTrash size="35px" />
+      </StyledRemoveButton>
     </StyledCard>
   );
 }
@@ -18,4 +18,11 @@ const StyledCard = styled.div`
   border: 1px solid black;
   margin: 10px;
   padding: 10px;
+  position: relative;
+`;
+
+const StyledRemoveButton = styled.button`
+  position: absolute;
+  top: 5px;
+  right: 5px;
 `;
