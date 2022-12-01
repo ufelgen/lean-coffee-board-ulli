@@ -1,12 +1,14 @@
 import styled from "styled-components";
-import { CiCircleRemove } from "react-icons";
+import { CiCircleRemove } from "react-icons/ci";
 
 export default function Card({ name, thoughts, id, onRemoveCard }) {
   return (
     <StyledCard>
       <h4>{name} is thinking about...</h4>
       <p>{thoughts}</p>
-      <button onClick={() => onRemoveCard(id)}>remove</button>
+      <button onClick={() => onRemoveCard(id)}>
+        <CiCircleRemove />
+      </button>
     </StyledCard>
   );
 }
