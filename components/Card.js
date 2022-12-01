@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export default function Card() {
+export default function Card({ name, thoughts }) {
   return (
     <StyledCard>
-      <h4>Ulli is thinking about...</h4>
-      <p>coffee</p>
+      <h4>{name} is thinking about...</h4>
+      <p>{thoughts}</p>
     </StyledCard>
   );
 }

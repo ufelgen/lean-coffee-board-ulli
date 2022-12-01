@@ -1,10 +1,22 @@
 import styled from "styled-components";
 
-export default function Form() {
+export default function Form({ onAddCard }) {
+  function handleSubmit(event) {
+    event.preventDefault();
+    const newCard = {
+      thoughts: event.target.elements.thoughts.value,
+      name: event.target.elements.name.value,
+    };
+
+    onAddCard(newCard);
+    event.target.reset();
+    event.target.elements.thoughts.focus();
+  }
+
   return (
     <>
       <StyledFooter>
-        <form>
+        <form onSubmit={handleSubmit}>
           <label htmlFor="thoughts">your question</label>
           <input
             id="thoughts"
